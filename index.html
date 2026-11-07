@@ -415,11 +415,14 @@
           <div class="aside">
             <div class="signals">
               <div class="signal"><span class="v">$0.0142</span><span class="k">Measured cost / case</span></div>
-              <div class="signal"><span class="v">78</span><span class="k">Tests, 7 CI jobs</span></div>
+              <div class="signal"><span class="v">58</span><span class="k">Tests, 5 CI jobs</span></div>
               <div class="signal"><span class="v">22 / 4</span><span class="k">Grafana panels / alerts</span></div>
             </div>
             <div class="stack">
               <span class="chip">Python 3.12</span><span class="chip">FastAPI</span><span class="chip">Kafka (KRaft)</span><span class="chip">PostgreSQL 16</span><span class="chip">pgvector</span><span class="chip">Angular 22</span><span class="chip">Kubernetes</span><span class="chip">Prometheus</span><span class="chip">Grafana</span>
+            </div>
+            <div class="p-links">
+              <a href="https://github.com/MisbahShahzeen/claims-intelligence" target="_blank" rel="noopener">Repository ↗</a>
             </div>
           </div>
         </article>
@@ -431,17 +434,17 @@
               <span class="status">Complete</span>
             </div>
             <p class="kicker">AI-assisted résumé and job-matching tool</p>
-            <p class="body">RAG analysis took 267 seconds against a 120-second inter-service HTTP timeout, so the fix had to be structural rather than a longer timeout: the AI work moved out behind an async job queue with a two-replica worker, and the frontend polls job status instead of holding a request open. Embeddings are 768-dimensional and stored in pgvector, with cosine thresholds tuned for match quality; the data layer is SQLAlchemy with Alembic migrations and Redis-backed rate limiting in front.</p>
+            <p class="body">RAG analysis took 267 seconds against a 120-second inter-service HTTP timeout, so the AI work moved out of the request: the backend now runs it as a background task that calls a separate two-replica worker and records the job's status. Embeddings are 768-dimensional and stored in pgvector, with cosine thresholds tuned for match quality; the data layer is SQLAlchemy with Alembic migrations and Redis-backed rate limiting in front.</p>
             <p class="note">The frontend is live on Vercel. The backend deployment is currently paused, so the hosted demo is frontend-only — the full stack runs from the repo.</p>
           </div>
           <div class="aside">
             <div class="signals">
-              <div class="signal"><span class="v">267s → queued</span><span class="k">Timeout fix</span></div>
+              <div class="signal"><span class="v">2</span><span class="k">AI worker replicas</span></div>
               <div class="signal"><span class="v">25</span><span class="k">Green CI tests</span></div>
               <div class="signal"><span class="v">768-dim</span><span class="k">Embeddings</span></div>
             </div>
             <div class="stack">
-              <span class="chip">FastAPI</span><span class="chip">Next.js 14</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">Kubernetes</span>
+              <span class="chip">FastAPI</span><span class="chip">Next.js 16</span><span class="chip">TypeScript</span><span class="chip">PostgreSQL</span><span class="chip">pgvector</span><span class="chip">MongoDB</span><span class="chip">Redis</span><span class="chip">Kubernetes</span>
             </div>
             <div class="p-links">
               <a href="https://careerlens-one.vercel.app" target="_blank" rel="noopener">Live frontend ↗</a>
@@ -496,7 +499,7 @@
           <div>
             <h4>Software Developer Intern</h4>
             <p class="where">Aurigo Software Technologies, Bengaluru · Solution Engineering</p>
-            <p>Thirteen months of full-stack work on Aurigo Masterworks, an enterprise capital program management SaaS platform — C# (.NET), JavaScript, XML and SQL Server, across requirements analysis, implementation, unit testing and release.</p>
+            <p>Thirteen months of full-stack work on Aurigo Masterworks, an enterprise capital program management SaaS platform — C# (.NET), JavaScript, XML and SQL Server, owning work items from ticket through implementation, unit testing and release.</p>
             <ul class="did">
               <li>Resolved production and development defects by tracing issues across the application and database layers, including debugging and correcting SQL Server stored procedures.</li>
               <li>Optimised data-layer logic and query behaviour in T-SQL stored procedures, keeping the platform predictable and performant under real client workloads.</li>
@@ -559,7 +562,7 @@
       </div>
       <footer>
         <span>Misbah Shahzeen · Bengaluru</span>
-        <span>Last updated August 2026</span>
+        <span>Last updated November 2026</span>
       </footer>
     </section>
   </div>
